@@ -15,7 +15,9 @@ pub fn derive_enum_from(input: TokenStream) -> TokenStream {
         let var = &variant.ident;
         match &variant.fields {
             syn::Fields::Unnamed(fields) => {
-                if fields.unnamed.len() == 1 {
+                if fields.unnamed.len() != 1 {
+                    quote! {}
+                } else {
                     let field = &fields.unnamed.first().expect("should have one field");
                     let ty = &field.ty;
                     quote! {
@@ -25,16 +27,14 @@ pub fn derive_enum_from(input: TokenStream) -> TokenStream {
                             }
                         }
                     }
-                } else {
-                    quote!{}
                 }
             }
-            _ => quote!{},
+            _ => quote! {},
         }
-        
     });
 
     quote! {
         #(#from_impls)*
-    }.into()
+    }
+    .into()
 }

@@ -1,10 +1,10 @@
-fn main(){
-    let v = my_vec![1,2,3];
+fn main() {
+    let v = my_vec![1, 2, 3];
     println!("{:?}", v);
-    let v = my_vec!{1,2,3,};
+    let v = my_vec! {1,2,3,};
     println!("{:?}", v);
 
-    <[_]>::into_vec(Box::new([1,2,3,4]));
+    <[_]>::into_vec(Box::new([1, 2, 3, 4]));
 }
 
 // my_vec! = my_vec!(1, 2, 3);

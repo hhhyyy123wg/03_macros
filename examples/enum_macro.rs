@@ -1,8 +1,7 @@
 use template::EnumFrom;
 
-
 #[allow(unused)]
-#[derive(Debug,EnumFrom)]
+#[derive(Debug, EnumFrom)]
 enum Direction {
     Up(DirectionUp),
     Down,
@@ -13,12 +12,12 @@ enum Direction {
 #[allow(unused)]
 #[derive(Debug)]
 struct DirectionUp {
-    speed: u32
+    speed: u32,
 }
 
 fn main() {
-    let d :Direction = DirectionUp { speed: 10 }.into();
-    let left :Direction = 10.into();
+    let d: Direction = DirectionUp { speed: 10 }.into();
+    let left: Direction = 10.into();
     println!("{:?}", d);
     println!("{:?}", left);
 }
