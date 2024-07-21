@@ -8,6 +8,7 @@ edition = "2021"
 proc-macro = true
 
 [dependencies]
+darling = "0.20.10"
 # proc-macro2 用来生成 TokenStream
 proc-macro2 = "1.0.86"
 # quote 用来生成 Rust 代码
